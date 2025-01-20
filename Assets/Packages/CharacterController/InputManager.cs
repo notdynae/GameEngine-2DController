@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour, GameInput.IPlayerControlsActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        ActionsManager.MoveEvent?.Invoke();
+        ActionsManager.MoveEvent?.Invoke(context.ReadValue<Vector2>());
     }
 
     void GameInput.IPlayerControlsActions.OnInteract(InputAction.CallbackContext context)

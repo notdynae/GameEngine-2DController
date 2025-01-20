@@ -6,9 +6,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 	// private PlayerInputActions inputActions;
-	private Vector2 _moveInput;
+	private Vector2 _playerMovement;
+	private Rigidbody2D _rigidbody2D;
 	[SerializeField]
-	private float moveSpeed = 5f;
+	private float moveSpeed = 10f;
+	
 	
 
 	private void Interact()
@@ -16,10 +18,10 @@ public class PlayerMovement : MonoBehaviour
 		throw new NotImplementedException();
 	}
 
-	private void HandleMovement()
+	private void HandleMovement(Vector2 moveInput)
 	{
 		// Get movement input from the Input Actions
-		// _moveInput = ActionsManager.MoveEvent.
+		_playerMovement = moveInput;
 		// Calculate movement direction based on input
 		// Vector2 moveDirection = new Vector2(_moveInput.x, _moveInput.y).normalized;
 	}
@@ -27,8 +29,14 @@ public class PlayerMovement : MonoBehaviour
 	private void FixedUpdate()
 	{
 		// Move the object
-		// transform.Translate(moveDirection * (moveSpeed * Time.deltaTime), Space.World);
+		transform.Translate(_playerMovement * (moveSpeed * Time.deltaTime), Space.World);
 	}
+
+	private void Start()
+	{
+		_rigidbody2D = GetComponent<Rigidbody2D>();
+	}
+	
 	private void OnEnable()
 	{
 		ActionsManager.MoveEvent += HandleMovement; 
