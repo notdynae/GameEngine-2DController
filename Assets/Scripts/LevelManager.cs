@@ -1,23 +1,37 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-	public void NextScene() { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); }
-	
-	private void OnEnable() {
-		ActionsManager.InteractEvent += NextScene;
+	[SerializeField] private GameObject player;
+	[SerializeField] private GameObject spawnPoint;
+
+	public void LoadNewScene(int index)
+	{
+		SceneManager.LoadScene(index);
 	}
-	private void OnDisable() {
-		ActionsManager.InteractEvent -= NextScene;
+
+	public void Awake()
+	{
+		player = GameObject.Find("Player");
 	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
+	{
+		spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+		player.transform.position = spawnPoint.transform.position;
+	}
+
+	public void OnEnable() { SceneManager.sceneLoaded += OnSceneLoaded; }
+	public void OnDisable() { SceneManager.sceneLoaded -= OnSceneLoaded; }
 
 	public void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Alpha2)) SceneManager.LoadScene(1);
-		if (Input.GetKeyDown(KeyCode.Alpha1)) SceneManager.LoadScene(0);
+		if (Input.GetKeyDown(KeyCode.Alpha1)) {
+			LoadNewScene(0);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha2)) {
+			LoadNewScene(1);
+		}
 	}
 }
