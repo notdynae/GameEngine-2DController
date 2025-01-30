@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5157a8394688830469bb211bb8083e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7.5
 --- !u!61 &306018919
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  spawnPointString: 
   spawnPoint: {fileID: 0}
 --- !u!1 &578244848
 GameObject:
@@ -883,6 +884,14 @@ PrefabInstance:
     - target: {fileID: 1580299416221173144, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
       propertyPath: m_Name
       value: SceneChange_Snowmen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586920123476650043, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
+      propertyPath: sceneName
+      value: SkiHill_Snowmen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586920123476650043, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
+      propertyPath: spawnPoint
+      value: SpawnPoint_Slalom
       objectReference: {fileID: 0}
     - target: {fileID: 4255207867269414081, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
       propertyPath: m_Enabled
@@ -4611,16 +4620,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -3, y: -8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 0, y: -8, z: 0}
     second:
       serializedVersion: 2
@@ -5311,16 +5310,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -2, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 0, y: 7, z: 0}
     second:
       serializedVersion: 2
@@ -5403,9 +5392,9 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 5ddba33cf30724b44a0e32a3b6dabb2b, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: c164b42784d55be41bcc3d2563510619, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: a177972a83c02de428b8782fbb134733, type: 2}
   - m_RefCount: 76
     m_Data: {fileID: 11400000, guid: 3ef4494638154ab4c86fff288b273f17, type: 2}
@@ -5420,14 +5409,14 @@ Tilemap:
     m_Data: {fileID: -405375984, guid: 81996c03e6d09c047887259a2d3624b5, type: 3}
   - m_RefCount: 76
     m_Data: {fileID: 1912259363, guid: 81996c03e6d09c047887259a2d3624b5, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 1019213114, guid: 81996c03e6d09c047887259a2d3624b5, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 1187741130, guid: 81996c03e6d09c047887259a2d3624b5, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -25104142, guid: 81996c03e6d09c047887259a2d3624b5, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 85
+  - m_RefCount: 83
     m_Data:
       e00: 1
       e01: 0
@@ -5464,7 +5453,7 @@ Tilemap:
       e32: 6.75e-43
       e33: 6.78e-43
   m_TileColorArray:
-  - m_RefCount: 85
+  - m_RefCount: 83
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -5614,7 +5603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194843816482063248, guid: 88ea1c5a0f6689c4cb92e2633aac06f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.14
+      value: 7.45
       objectReference: {fileID: 0}
     - target: {fileID: 9194843816482063248, guid: 88ea1c5a0f6689c4cb92e2633aac06f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5749,9 +5738,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneChange_Forest
       objectReference: {fileID: 0}
+    - target: {fileID: 2586920123476650043, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
+      propertyPath: sceneName
+      value: SkiHill_Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586920123476650043, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
+      propertyPath: spawnPoint
+      value: Spawnpoint_Slalom
+      objectReference: {fileID: 0}
     - target: {fileID: 4255207867269414081, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255207867269414081, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5505436333035590460, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
       propertyPath: m_Color.a
@@ -5796,7 +5797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194843816482063248, guid: 88ea1c5a0f6689c4cb92e2633aac06f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.55
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 9194843816482063248, guid: 88ea1c5a0f6689c4cb92e2633aac06f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5842,6 +5843,6 @@ SceneRoots:
   - {fileID: 745843284}
   - {fileID: 1224283816}
   - {fileID: 7742167664115404377}
+  - {fileID: 1545905213}
   - {fileID: 1325615558989686866}
   - {fileID: 1006004779}
-  - {fileID: 1545905213}

@@ -4805,11 +4805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194843816482063248, guid: 88ea1c5a0f6689c4cb92e2633aac06f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.15
+      value: -2.03
       objectReference: {fileID: 0}
     - target: {fileID: 9194843816482063248, guid: 88ea1c5a0f6689c4cb92e2633aac06f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.25
+      value: -7.49
       objectReference: {fileID: 0}
     - target: {fileID: 9194843816482063248, guid: 88ea1c5a0f6689c4cb92e2633aac06f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4899,6 +4899,14 @@ PrefabInstance:
     - target: {fileID: 1580299416221173144, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
       propertyPath: m_Name
       value: SceneChange_Slalom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586920123476650043, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
+      propertyPath: sceneName
+      value: SkiHill_Slalom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586920123476650043, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
+      propertyPath: spawnPoint
+      value: Spawnpoint_Snowmen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

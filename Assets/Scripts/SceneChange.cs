@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class Trigger_SceneChange : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
-    [SerializeField] private string spawnPoint;
+    [SerializeField] private LevelManager levelManager;
+    [SerializeField] public string sceneName;
+    [SerializeField] public string spawnPoint;
+    
+    private void Awake() {
+        levelManager = FindObjectOfType<LevelManager>();
+    }
 
-    public void OnTriggerEnter(Collider player) {
-        throw new NotImplementedException();
+    public void OnTriggerEnter2D(Collider2D player) {
+        levelManager.SceneChange(sceneName, spawnPoint);
     }
 }
