@@ -891,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2586920123476650043, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
       propertyPath: spawnPoint
-      value: SpawnPoint_Slalom
+      value: Spawnpoint_Slalom
       objectReference: {fileID: 0}
     - target: {fileID: 4255207867269414081, guid: 8ccdb431aa0e25e4f9ce53a0708b4b41, type: 3}
       propertyPath: m_Enabled

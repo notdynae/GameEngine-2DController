@@ -3,29 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-	[SerializeField] private GameObject player;
+	private GameObject player;
 	[SerializeField] private string spawnPointString;
 	[SerializeField] private GameObject spawnPoint;
+	private bool _startingScene = true;
 
 	public void Awake()
 	{
 		player = GameObject.Find("Player");
+		SceneManager.sceneLoaded += OnSceneLoaded;
 	}
 
-	public void SceneChange(string scene, string spawn) {
+	public void SceneChange(string scene, string spawn) 
+	{
+		_startingScene = false;
 		SceneManager.LoadScene(scene);
 		spawnPointString = spawn;
-		Debug.Log(spawnPointString);
 	}
 
-	public void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		Debug.Log($"OnSceneLoaded, {spawnPointString}");
+		if (_startingScene) return;
 		spawnPoint = GameObject.Find(spawnPointString);
 		player.transform.position = spawnPoint.transform.position;
 	}
-
-	public void OnEnable() { SceneManager.sceneLoaded += OnSceneLoaded; }
-	// public void OnDisable() { SceneManager.sceneLoaded -= OnSceneLoaded; }
-
+	
+	public void OnDestroy() { SceneManager.sceneLoaded -= OnSceneLoaded; }
 }
