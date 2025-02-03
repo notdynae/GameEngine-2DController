@@ -8,23 +8,14 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     private Vector3 offset;
     [SerializeField]
+    [Range(0.0f, 1.0f)]
     private float damping;
     
     private Vector3 _velocity = Vector3.zero;
-
-    private void Target(GameObject target)
-    {
-        _target = target.transform;
-    }
     
-    public void Start()
-    {
-        Target(GameObject.Find("Player"));
-    }
-
     void FixedUpdate()
     {
-        Vector3 desiredPosition = _target.position + offset;
+        Vector3 desiredPosition = GameManager.Instance.player.transform.position + offset;
         transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref _velocity, damping);
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
 	private Vector2 _playerMovement;
 	private Rigidbody2D _rigidbody2D;
