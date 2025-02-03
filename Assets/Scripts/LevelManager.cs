@@ -3,11 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-
 	[SerializeField] private string spawnPointString;
 	[SerializeField] private GameObject spawnPoint;
 	
-
 	public void SceneChange(string scene, string spawn) 
 	{
 		spawnPointString = spawn;
